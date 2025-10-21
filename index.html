@@ -18,6 +18,52 @@
         padding: 0;
         box-sizing: border-box;
       }
+      /* Project Footer Styling */
+      .project-footer {
+        padding: 1.5rem;
+        border-top: 1px solid #eee;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+
+      .project-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.75rem 1.5rem;
+        background: var(--primary-color);
+        color: var(--white);
+        text-decoration: none;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+        font-weight: 500;
+      }
+
+      .project-link:hover {
+        background: var(--secondary-color);
+        transform: translateY(-2px);
+        box-shadow: var(--shadow);
+      }
+
+      .status-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        animation: pulse 2s infinite;
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.7;
+        }
+      }
 
       .project-footer {
         padding: 1rem 1.5rem;
@@ -726,6 +772,7 @@
           <li><a href="#skills">Skills</a></li>
           <li><a href="#experience">Experience</a></li>
           <li><a href="#projects">Projects</a></li>
+          <li><a href="#current-work">Current Work</a></li>
           <li><a href="#certifications">Certifications</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
@@ -826,7 +873,6 @@
               <li>HTML & CSS</li>
               <li>JavaScript</li>
               <li>React</li>
-              <li>Angular (ready)</li>
               <li>Responsive Design</li>
               <li>UI/UX Principles</li>
             </ul>
@@ -846,7 +892,6 @@
             <h3><i class="fas fa-database"></i> Databases</h3>
             <ul>
               <li>SQL</li>
-              <li>MySQL</li>
             </ul>
           </div>
 
@@ -1058,6 +1103,62 @@
               >
                 <i class="fab fa-github"></i> View Config
               </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Currently Working On Section -->
+    <section id="current-work" style="background: var(--bg-light)">
+      <div class="container">
+        <h2 class="section-title">Currently Working On</h2>
+        <div class="projects-grid">
+          <!-- Tokai Audio Player -->
+          <div class="project-card">
+            <div class="project-header">
+              <h3>Tokai - Bit Perfect Audio Player</h3>
+              <div class="date">October 2025 – Present</div>
+            </div>
+            <div class="project-body">
+              <ul>
+                <li>
+                  Developing a bit-perfect audio player in C++ with FLAC codec
+                  support using CMake build system
+                </li>
+                <li>
+                  Implementing cross-platform audio playback engine for macOS
+                  with high-fidelity FLAC audio decoding
+                </li>
+                <li>
+                  Integrating libFLAC for lossless audio processing and
+                  bit-perfect playback capabilities
+                </li>
+                <li>
+                  Building modular architecture for future codec support and
+                  plugin system
+                </li>
+              </ul>
+            </div>
+            <div class="project-footer">
+              <a
+                href="https://github.com/hkhrithik007/Tokai"
+                target="_blank"
+                class="project-link github"
+              >
+                <i class="fab fa-github"></i> View Code
+              </a>
+              <span
+                class="status-badge"
+                style="
+                  background: #4caf50;
+                  color: white;
+                  padding: 0.5rem 1rem;
+                  border-radius: 20px;
+                  font-size: 0.9rem;
+                "
+              >
+                <i class="fas fa-code"></i> In Development
+              </span>
             </div>
           </div>
         </div>
