@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Hritik Sharma - AI/ML Developer & Computer Vision Specialist"
+      content="Hritik Sharma - Full Stack Developer Portfolio"
     />
-    <title>Hritik Sharma | AI/ML Developer</title>
+    <title>Hritik Sharma | Full Stack Developer</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -18,12 +18,100 @@
         padding: 0;
         box-sizing: border-box;
       }
+      /* Project Footer Styling */
+      .project-footer {
+        padding: 1.5rem;
+        border-top: 1px solid #eee;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
 
+      .project-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.75rem 1.5rem;
+        background: var(--primary-color);
+        color: var(--white);
+        text-decoration: none;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+        font-weight: 500;
+      }
+
+      .project-link:hover {
+        background: var(--secondary-color);
+        transform: translateY(-2px);
+        box-shadow: var(--shadow);
+      }
+
+      .status-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        animation: pulse 2s infinite;
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.7;
+        }
+      }
+
+      .project-footer {
+        padding: 1rem 1.5rem;
+        border-top: 1px solid #e5e7eb;
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      .project-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.5rem 1rem;
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 0.9rem;
+        transition: all 0.3s ease;
+      }
+
+      .project-link.github {
+        background: #24292e;
+        color: var(--white);
+      }
+
+      .project-link.github:hover {
+        background: #1a1e22;
+        transform: translateY(-2px);
+      }
+
+      .project-link.demo {
+        background: var(--primary-color);
+        color: var(--white);
+      }
+
+      .project-link.demo:hover {
+        background: var(--secondary-color);
+        transform: translateY(-2px);
+      }
+
+      .project-link i {
+        font-size: 1rem;
+      }
       :root {
         --primary-color: #6366f1;
         --secondary-color: #8b5cf6;
-        --accent-color: #ec4899;
-        --ai-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         --text-dark: #1f2937;
         --text-light: #6b7280;
         --bg-light: #f9fafb;
@@ -39,7 +127,7 @@
         overflow-x: hidden;
       }
 
-      /* Navigation */
+      /* Navbar */
       nav {
         position: fixed;
         top: 0;
@@ -49,6 +137,10 @@
         box-shadow: var(--shadow);
         z-index: 1000;
         transition: all 0.3s ease;
+      }
+
+      nav.scrolled {
+        padding: 0.5rem 0;
       }
 
       .nav-container {
@@ -161,16 +253,6 @@
         margin-bottom: 1rem;
         opacity: 0.9;
         animation: fadeInUp 0.8s ease 0.2s both;
-      }
-
-      .ai-badge {
-        display: inline-block;
-        background: rgba(255, 255, 255, 0.2);
-        padding: 0.5rem 1.5rem;
-        border-radius: 50px;
-        margin-bottom: 1rem;
-        backdrop-filter: blur(10px);
-        animation: fadeInUp 0.8s ease 0.3s both;
       }
 
       .hero-content p {
@@ -296,55 +378,19 @@
         line-height: 1.8;
       }
 
-      .highlight-box {
-        background: linear-gradient(
-          135deg,
-          var(--primary-color),
-          var(--secondary-color)
-        );
-        color: var(--white);
-        padding: 2rem;
-        border-radius: 15px;
-        box-shadow: var(--shadow-lg);
-      }
-
-      .highlight-box h3 {
-        margin-bottom: 1rem;
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-      }
-
-      .highlight-box ul {
-        list-style: none;
-      }
-
-      .highlight-box li {
-        padding: 0.5rem 0;
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-      }
-
-      .highlight-box li::before {
-        content: "⚡";
-        font-size: 1.2rem;
-      }
-
       /* Skills Section */
       .skills-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         gap: 2rem;
       }
 
       .skill-category {
         background: var(--white);
         padding: 2rem;
-        border-radius: 15px;
+        border-radius: 10px;
         box-shadow: var(--shadow);
         transition: transform 0.3s ease;
-        border-top: 3px solid var(--primary-color);
       }
 
       .skill-category:hover {
@@ -376,137 +422,6 @@
         content: "▹";
         color: var(--primary-color);
         font-weight: bold;
-        font-size: 1.2rem;
-      }
-
-      /* Projects Section */
-      .projects-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-        gap: 2rem;
-      }
-
-      .project-card {
-        background: var(--white);
-        border-radius: 15px;
-        overflow: hidden;
-        box-shadow: var(--shadow);
-        transition: all 0.3s ease;
-        border: 2px solid transparent;
-      }
-
-      .project-card:hover {
-        transform: translateY(-10px);
-        box-shadow: var(--shadow-lg);
-        border-color: var(--primary-color);
-      }
-
-      .project-card.featured {
-        border-color: var(--accent-color);
-      }
-
-      .project-header {
-        background: linear-gradient(
-          135deg,
-          var(--primary-color),
-          var(--secondary-color)
-        );
-        padding: 1.5rem;
-        color: var(--white);
-        position: relative;
-      }
-
-      .featured-badge {
-        position: absolute;
-        top: 1rem;
-        right: 1rem;
-        background: var(--accent-color);
-        padding: 0.3rem 0.8rem;
-        border-radius: 20px;
-        font-size: 0.8rem;
-        font-weight: bold;
-      }
-
-      .project-header h3 {
-        margin-bottom: 0.5rem;
-        font-size: 1.3rem;
-      }
-
-      .project-header .date {
-        font-size: 0.9rem;
-        opacity: 0.9;
-      }
-
-      .project-body {
-        padding: 1.5rem;
-      }
-
-      .project-body ul {
-        list-style: none;
-        color: var(--text-light);
-      }
-
-      .project-body li {
-        padding: 0.5rem 0;
-        padding-left: 1.5rem;
-        position: relative;
-      }
-
-      .project-body li::before {
-        content: "✓";
-        position: absolute;
-        left: 0;
-        color: var(--primary-color);
-        font-weight: bold;
-      }
-
-      .tech-stack {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.5rem;
-        margin-top: 1rem;
-        padding-top: 1rem;
-        border-top: 1px solid #eee;
-      }
-
-      .tech-badge {
-        background: var(--bg-light);
-        padding: 0.3rem 0.8rem;
-        border-radius: 15px;
-        font-size: 0.85rem;
-        color: var(--primary-color);
-        font-weight: 600;
-      }
-
-      .project-footer {
-        padding: 1rem 1.5rem;
-        border-top: 1px solid #e5e7eb;
-        display: flex;
-        gap: 1rem;
-        align-items: center;
-        flex-wrap: wrap;
-      }
-
-      .project-link {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.5rem;
-        padding: 0.5rem 1rem;
-        border-radius: 5px;
-        text-decoration: none;
-        font-weight: 600;
-        font-size: 0.9rem;
-        transition: all 0.3s ease;
-      }
-
-      .project-link.github {
-        background: #24292e;
-        color: var(--white);
-      }
-
-      .project-link.github:hover {
-        background: #1a1e22;
-        transform: translateY(-2px);
       }
 
       /* Experience Section */
@@ -586,6 +501,68 @@
         position: absolute;
         left: 0;
         color: var(--primary-color);
+      }
+
+      /* Projects Section */
+      .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 2rem;
+      }
+
+      .project-card {
+        background: var(--white);
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+        transition: transform 0.3s ease;
+      }
+
+      .project-card:hover {
+        transform: translateY(-10px);
+        box-shadow: var(--shadow-lg);
+      }
+
+      .project-header {
+        background: linear-gradient(
+          135deg,
+          var(--primary-color),
+          var(--secondary-color)
+        );
+        padding: 1.5rem;
+        color: var(--white);
+      }
+
+      .project-header h3 {
+        margin-bottom: 0.5rem;
+      }
+
+      .project-header .date {
+        font-size: 0.9rem;
+        opacity: 0.9;
+      }
+
+      .project-body {
+        padding: 1.5rem;
+      }
+
+      .project-body ul {
+        list-style: none;
+        color: var(--text-light);
+      }
+
+      .project-body li {
+        padding: 0.5rem 0;
+        padding-left: 1.5rem;
+        position: relative;
+      }
+
+      .project-body li::before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        color: var(--primary-color);
+        font-weight: bold;
       }
 
       /* Certifications Section */
@@ -696,6 +673,18 @@
         padding: 2rem;
       }
 
+      /* Animations */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
       /* Scroll to top button */
       .scroll-top {
         position: fixed;
@@ -726,18 +715,6 @@
 
       .scroll-top:hover {
         transform: translateY(-5px);
-      }
-
-      /* Animations */
-      @keyframes fadeInUp {
-        from {
-          opacity: 0;
-          transform: translateY(30px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
       }
 
       /* Responsive */
@@ -781,10 +758,6 @@
         .section-title {
           font-size: 2rem;
         }
-
-        .projects-grid {
-          grid-template-columns: 1fr;
-        }
       }
     </style>
   </head>
@@ -792,13 +765,14 @@
     <!-- Navigation -->
     <nav id="navbar">
       <div class="nav-container">
-        <div class="logo">HS.ai</div>
+        <div class="logo">HS</div>
         <ul class="nav-links" id="navLinks">
           <li><a href="#home">Home</a></li>
           <li><a href="#about">About</a></li>
-          <li><a href="#skills">AI/ML Skills</a></li>
-          <li><a href="#projects">Projects</a></li>
+          <li><a href="#skills">Skills</a></li>
           <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#current-work">Current Work</a></li>
           <li><a href="#certifications">Certifications</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
@@ -814,16 +788,10 @@
     <section class="hero" id="home">
       <div class="hero-content">
         <h1>Hritik Sharma</h1>
-        <div class="ai-badge">
-          <i class="fas fa-brain"></i> AI/ML Enthusiast & Developer
-        </div>
-        <p class="tagline">
-          Building Intelligent Systems with Deep Learning & Computer Vision
-        </p>
+        <p class="tagline">Full Stack Developer & Cybersecurity Specialist</p>
         <p>
-          Specializing in TensorFlow, PyTorch, Computer Vision, NLP, and
-          algorithmic trading systems. Passionate about pushing the boundaries
-          of AI to solve real-world problems.
+          Building responsive web applications with modern technologies and a
+          focus on security best practices
         </p>
 
         <div class="social-links">
@@ -831,27 +799,25 @@
             href="https://github.com/hkhrithik007"
             target="_blank"
             title="GitHub"
-          >
-            <i class="fab fa-github"></i>
-          </a>
+            ><i class="fab fa-github"></i
+          ></a>
           <a
             href="https://linkedin.com/in/hritik-sharma-b554121b8"
             target="_blank"
             title="LinkedIn"
-          >
-            <i class="fab fa-linkedin"></i>
-          </a>
-          <a href="mailto:hkhrithik083@gmail.com" title="Email">
-            <i class="fas fa-envelope"></i>
-          </a>
-          <a href="tel:+919460497120" title="Phone">
-            <i class="fas fa-phone"></i>
-          </a>
+            ><i class="fab fa-linkedin"></i
+          ></a>
+          <a href="mailto:hkhrithik083@gmail.com" title="Email"
+            ><i class="fas fa-envelope"></i
+          ></a>
+          <a href="tel:+919460497120" title="Phone"
+            ><i class="fas fa-phone"></i
+          ></a>
         </div>
 
         <div class="cta-buttons">
-          <a href="#contact" class="btn btn-primary">Hire Me</a>
-          <a href="#projects" class="btn btn-secondary">View AI Projects</a>
+          <a href="#contact" class="btn btn-primary">Get In Touch</a>
+          <a href="#projects" class="btn btn-secondary">View My Work</a>
         </div>
       </div>
     </section>
@@ -862,40 +828,34 @@
         <h2 class="section-title">About Me</h2>
         <div class="about-content">
           <div class="about-text">
-            <h3>AI/ML Developer & Computer Vision Specialist</h3>
+            <h3>Hello! I'm Hritik Sharma</h3>
             <p>
-              I'm a passionate AI/ML developer with expertise in building
-              intelligent systems using cutting-edge technologies. My journey in
-              artificial intelligence combines academic knowledge in
-              Cybersecurity with hands-on experience in machine learning
-              frameworks.
+              A passionate Full Stack Developer with a specialized focus on
+              cybersecurity. I graduated with a Bachelor's degree in Computer
+              Applications from JECRC University in 2025, where I specialized in
+              Cybersecurity.
             </p>
             <p>
-              With a strong foundation in Python, TensorFlow, and Computer
-              Vision, I've developed production-ready AI systems including
-              algorithmic trading platforms, face manipulation tools, and
-              predictive analytics solutions. I thrive on transforming complex
-              data into actionable insights through advanced ML algorithms.
+              With hands-on experience in web development, system
+              administration, and technical instruction, I bring a unique blend
+              of technical expertise and communication skills to every project.
+              I'm proficient in modern web technologies including React, Flask,
+              and various database systems.
             </p>
             <p>
-              My approach combines rigorous experimentation, clean code
-              practices, and a deep understanding of both the mathematical
-              foundations and practical applications of AI. I'm constantly
-              exploring new frontiers in deep learning, NLP, and computer
-              vision.
+              I believe in writing clean, maintainable code and following
+              industry best practices. My experience ranges from building
+              responsive web applications to teaching technical concepts and
+              managing cloud-based deployments.
             </p>
           </div>
-          <div>
-            <div class="highlight-box">
-              <h3><i class="fas fa-robot"></i> AI/ML Focus Areas</h3>
-              <ul>
-                <li>Deep Learning & Neural Networks</li>
-                <li>Computer Vision & Image Processing</li>
-                <li>Natural Language Processing</li>
-                <li>Time-Series Forecasting</li>
-                <li>Algorithmic Trading Systems</li>
-                <li>MLOps & Model Deployment</li>
-              </ul>
+          <div class="about-image">
+            <div class="skill-category">
+              <h3><i class="fas fa-graduation-cap"></i> Education</h3>
+              <p><strong>JECRC University</strong></p>
+              <p>Bachelor in Computer Applications</p>
+              <p>Specialized in Cybersecurity</p>
+              <p><em>Graduated: 2025</em></p>
             </div>
           </div>
         </div>
@@ -905,69 +865,124 @@
     <!-- Skills Section -->
     <section id="skills">
       <div class="container">
-        <h2 class="section-title">AI/ML Technical Arsenal</h2>
+        <h2 class="section-title">Technical Skills</h2>
         <div class="skills-grid">
           <div class="skill-category">
-            <h3><i class="fas fa-brain"></i> AI/ML Frameworks</h3>
+            <h3><i class="fas fa-code"></i> Frontend Development</h3>
             <ul>
-              <li>TensorFlow & Keras</li>
-              <li>PyTorch</li>
-              <li>scikit-learn</li>
-              <li>Hugging Face Transformers</li>
-              <li>NumPy & Pandas</li>
+              <li>HTML & CSS</li>
+              <li>JavaScript</li>
+              <li>React</li>
+              <li>Responsive Design</li>
+              <li>UI/UX Principles</li>
             </ul>
           </div>
 
           <div class="skill-category">
-            <h3><i class="fas fa-eye"></i> Computer Vision</h3>
-            <ul>
-              <li>OpenCV</li>
-              <li>Image Processing</li>
-              <li>Object Detection</li>
-              <li>Face Recognition</li>
-              <li>Video Analysis</li>
-            </ul>
-          </div>
-
-          <div class="skill-category">
-            <h3><i class="fas fa-comments"></i> NLP & Text Analytics</h3>
-            <ul>
-              <li>BERT & Transformers</li>
-              <li>Sentiment Analysis</li>
-              <li>Text Classification</li>
-              <li>Named Entity Recognition</li>
-            </ul>
-          </div>
-
-          <div class="skill-category">
-            <h3><i class="fas fa-chart-line"></i> Data Science</h3>
-            <ul>
-              <li>Statistical Analysis</li>
-              <li>Time-Series Forecasting</li>
-              <li>Feature Engineering</li>
-              <li>Data Visualization</li>
-              <li>A/B Testing</li>
-            </ul>
-          </div>
-
-          <div class="skill-category">
-            <h3><i class="fas fa-code"></i> Development</h3>
+            <h3><i class="fas fa-server"></i> Backend Development</h3>
             <ul>
               <li>Python</li>
-              <li>Flask & FastAPI</li>
-              <li>REST APIs</li>
-              <li>Git & GitHub</li>
-              <li>Docker</li>
+              <li>Flask</li>
+              <li>Java</li>
+              <li>REST API</li>
             </ul>
           </div>
 
           <div class="skill-category">
-            <h3><i class="fas fa-cloud"></i> MLOps & Deployment</h3>
+            <h3><i class="fas fa-database"></i> Databases</h3>
             <ul>
-              <li>Model Versioning</li>
-              <li>Cloud Deployment</li>
-              <li>CI/CD Pipelines</li>
-              <li>Performance Optimization</li>
+              <li>SQL</li>
+            </ul>
+          </div>
+
+          <div class="skill-category">
+            <h3><i class="fas fa-tools"></i> Tools & Technologies</h3>
+            <ul>
+              <li>Git & GitHub</li>
+              <li>GitHub Actions</li>
+              <li>Docker</li>
+              <li>Render</li>
+              <li>Google Cloud</li>
+              <li>Bash Scripting</li>
+            </ul>
+          </div>
+
+          <div class="skill-category">
+            <h3><i class="fas fa-laptop-code"></i> Operating Systems</h3>
+            <ul>
+              <li>Ubuntu</li>
+              <li>Debian</li>
+              <li>macOS</li>
+              <li>Arch Linux</li>
+            </ul>
+          </div>
+
+          <div class="skill-category">
+            <h3><i class="fas fa-project-diagram"></i> Practices</h3>
+            <ul>
+              <li>Unit Testing</li>
+              <li>Debugging</li>
+              <li>Documentation</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+      <div class="container">
+        <h2 class="section-title">Professional Experience</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <h3>Executive Operator</h3>
+            <div class="company">Startek</div>
+            <div class="date">February 2025 – September 2025</div>
+            <ul>
+              <li>
+                Managed "MISSION HAPPINESS PROCESS," providing clear information
+                and resolving customer issues efficiently
+              </li>
+              <li>
+                Consistently met or exceeded assigned performance and quality
+                targets
+              </li>
+            </ul>
+          </div>
+
+          <div class="timeline-item">
+            <h3>Computer Science Instructor</h3>
+            <div class="company">Swadharma Foundation</div>
+            <div class="date">July 2024 – December 2024</div>
+            <ul>
+              <li>
+                Developed and documented technical curriculum with 90%
+                comprehension rate, demonstrating strong communication skills
+              </li>
+              <li>
+                Applied agile methodologies in iterative curriculum development
+                and peer learning programs
+              </li>
+            </ul>
+          </div>
+
+          <div class="timeline-item">
+            <h3>Web Developer and System Admin Intern</h3>
+            <div class="company">WePanther GlobalSoft Tech., Jaipur</div>
+            <div class="date">January 2023 – June 2023</div>
+            <ul>
+              <li>
+                Architected full-stack website using HTML, CSS, JavaScript, and
+                PHP, increasing user engagement by 40%
+              </li>
+              <li>
+                Implemented responsive front-end interfaces following UI/UX
+                design principles and best practices
+              </li>
+              <li>
+                Collaborated with team on debugging and unit testing, using Git
+                for version control in agile development environment
+              </li>
             </ul>
           </div>
         </div>
@@ -975,61 +990,12 @@
     </section>
 
     <!-- Projects Section -->
+    <!-- Projects Section -->
     <section id="projects">
       <div class="container">
-        <h2 class="section-title">Featured AI/ML Projects</h2>
+        <h2 class="section-title">Featured Projects</h2>
         <div class="projects-grid">
-          <!-- Trading Analysis -->
-          <div class="project-card featured">
-            <div class="project-header">
-              <span class="featured-badge">★ FEATURED</span>
-              <h3>Algorithmic Trading Data Analysis System</h3>
-              <div class="date">October 2024 – Present</div>
-            </div>
-            <div class="project-body">
-              <ul>
-                <li>
-                  Performed comprehensive analysis on historical trading data
-                  using advanced statistical methods and machine learning
-                </li>
-                <li>
-                  Implemented LSTM/GRU models using TensorFlow for price trend
-                  analysis achieving 78% pattern recognition accuracy
-                </li>
-                <li>
-                  Analyzed chart patterns using OpenCV-based computer vision for
-                  automated technical indicator extraction
-                </li>
-                <li>
-                  Conducted sentiment analysis on 10,000+ financial news
-                  articles using FinBERT (Hugging Face Transformers)
-                </li>
-                <li>
-                  Performed portfolio risk analysis and correlation studies
-                  using scikit-learn and statistical modeling
-                </li>
-                <li>
-                  Built data analysis pipeline processing 50+ technical
-                  indicators with NumPy and Pandas for market behavior insights
-                </li>
-                <li>
-                  Created comprehensive visualizations and statistical reports
-                  to identify trading patterns and market trends
-                </li>
-              </ul>
-              <div class="tech-stack">
-                <span class="tech-badge">TensorFlow</span>
-                <span class="tech-badge">OpenCV</span>
-                <span class="tech-badge">Transformers</span>
-                <span class="tech-badge">scikit-learn</span>
-                <span class="tech-badge">NumPy</span>
-                <span class="tech-badge">Pandas</span>
-                <span class="tech-badge">Python</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- FaceFusion -->
+          <!-- FaceFusion (NEW PROJECT) -->
           <div class="project-card">
             <div class="project-header">
               <h3>FaceFusion - AI Face Manipulation Platform</h3>
@@ -1038,28 +1004,22 @@
             <div class="project-body">
               <ul>
                 <li>
-                  Developed production-grade face swapping platform using
-                  advanced deep learning algorithms
+                  Developed industry-leading face manipulation platform using
+                  advanced AI and machine learning algorithms
                 </li>
                 <li>
-                  Implemented real-time face manipulation with TensorFlow and
-                  computer vision techniques
+                  Implemented real-time face swapping and enhancement features
+                  with Python and deep learning frameworks
                 </li>
                 <li>
-                  Optimized video processing pipeline with GPU acceleration for
-                  4x faster rendering
+                  Optimized performance for video processing with GPU
+                  acceleration and batch processing
                 </li>
                 <li>
-                  Created intuitive interface for complex AI model interaction
-                  with batch processing support
+                  Created intuitive user interface for seamless interaction with
+                  complex AI models
                 </li>
               </ul>
-              <div class="tech-stack">
-                <span class="tech-badge">TensorFlow</span>
-                <span class="tech-badge">OpenCV</span>
-                <span class="tech-badge">Python</span>
-                <span class="tech-badge">Deep Learning</span>
-              </div>
             </div>
             <div class="project-footer">
               <a
@@ -1075,15 +1035,14 @@
           <!-- Media Converter -->
           <div class="project-card">
             <div class="project-header">
-              <h3>AI-Powered Media Converter (Built with AI)</h3>
+              <h3>Media Converter Web App</h3>
               <div class="date">July 2025 – Present</div>
             </div>
             <div class="project-body">
               <ul>
                 <li>
-                  Website built using AI - Built fully responsive multi-tab web
-                  application using Flask (Python), HTML, CSS, JavaScript with
-                  modern UI/UX principles
+                  Built fully responsive multi-tab web application using Flask
+                  (Python), HTML, CSS, JavaScript with modern UI/UX principles
                 </li>
                 <li>
                   Implemented backend functionality for file processing using
@@ -1094,26 +1053,10 @@
                   real-time progress tracking
                 </li>
                 <li>
-                  Integrated AI-driven smart compression using machine learning
-                  to optimize file sizes while preserving quality
-                </li>
-                <li>
-                  Implemented automated quality enhancement algorithms using
-                  computer vision and audio analysis
-                </li>
-                <li>
                   Utilized Git/GitHub for version control and collaborative
                   development practices
                 </li>
               </ul>
-              <div class="tech-stack">
-                <span class="tech-badge">AI/ML</span>
-                <span class="tech-badge">Flask</span>
-                <span class="tech-badge">Python</span>
-                <span class="tech-badge">Pillow</span>
-                <span class="tech-badge">MoviePy</span>
-                <span class="tech-badge">pydub</span>
-              </div>
             </div>
             <div class="project-footer">
               <a
@@ -1125,12 +1068,50 @@
               </a>
             </div>
           </div>
-        </div>
 
-        <!-- In Development Section -->
-        <h2 class="section-title" style="margin-top: 5rem">
-          <i class="fas fa-code"></i> Currently In Development
-        </h2>
+          <!-- Custom Neovim IDE -->
+          <div class="project-card">
+            <div class="project-header">
+              <h3>Custom Neovim IDE</h3>
+              <div class="date">April 2024 – Present</div>
+            </div>
+            <div class="project-body">
+              <ul>
+                <li>
+                  Built custom development environment from scratch using Neovim
+                  0.11+ with native LSP configuration
+                </li>
+                <li>
+                  Implemented automated testing and documentation practices,
+                  achieving 40% faster development workflow
+                </li>
+                <li>
+                  Configured language servers for Python, JavaScript, HTML, CSS,
+                  and Lua with custom keybindings
+                </li>
+                <li>
+                  Published open-source configuration on GitHub for community
+                  use
+                </li>
+              </ul>
+            </div>
+            <div class="project-footer">
+              <a
+                href="https://github.com/hkhrithik007/nvimScratch.git"
+                target="_blank"
+                class="project-link github"
+              >
+                <i class="fab fa-github"></i> View Config
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Currently Working On Section -->
+    <section id="current-work" style="background: var(--bg-light)">
+      <div class="container">
+        <h2 class="section-title">Currently Working On</h2>
         <div class="projects-grid">
           <!-- Tokai Audio Player -->
           <div class="project-card">
@@ -1141,29 +1122,22 @@
             <div class="project-body">
               <ul>
                 <li>
-                  Developing high-fidelity audio player in C++ with advanced DSP
-                  algorithms
+                  Developing a bit-perfect audio player in C++ with FLAC codec
+                  support using CMake build system
                 </li>
                 <li>
-                  Implementing lossless FLAC codec with bit-perfect playback
-                  capabilities
+                  Implementing cross-platform audio playback engine for macOS
+                  with high-fidelity FLAC audio decoding
                 </li>
                 <li>
-                  Building cross-platform audio engine using CMake for macOS
-                  optimization
+                  Integrating libFLAC for lossless audio processing and
+                  bit-perfect playback capabilities
                 </li>
                 <li>
-                  Integrating machine learning for audio analysis and
-                  intelligent playlist generation
+                  Building modular architecture for future codec support and
+                  plugin system
                 </li>
               </ul>
-              <div class="tech-stack">
-                <span class="tech-badge">C++</span>
-                <span class="tech-badge">CMake</span>
-                <span class="tech-badge">libFLAC</span>
-                <span class="tech-badge">DSP</span>
-                <span class="tech-badge">ML</span>
-              </div>
             </div>
             <div class="project-footer">
               <a
@@ -1183,202 +1157,19 @@
                   font-size: 0.9rem;
                 "
               >
-                <i class="fas fa-rocket"></i> Active Development
+                <i class="fas fa-code"></i> In Development
               </span>
             </div>
           </div>
         </div>
-
-        <!-- Non-AI Projects Section -->
-        <h2 class="section-title" style="margin-top: 5rem">
-          Full Stack Development Projects
-        </h2>
-        <div class="projects-grid">
-          <!-- Custom Neovim IDE -->
-          <div class="project-card">
-            <div class="project-header">
-              <h3>Custom Neovim Development Environment</h3>
-              <div class="date">April 2024 – Present</div>
-            </div>
-            <div class="project-body">
-              <ul>
-                <li>
-                  Engineered custom Neovim-based IDE with integrated unit
-                  testing and debugging capabilities
-                </li>
-                <li>
-                  Implemented automated testing and documentation practices,
-                  achieving 40% faster development workflow
-                </li>
-                <li>
-                  Integrated LazyGit for streamlined version control operations
-                  and enhanced Git workflow management
-                </li>
-                <li>
-                  Configured multi-language LSP support for Java, Python, C, and
-                  C++ with syntax highlighting and IntelliSense
-                </li>
-                <li>
-                  Built plugin ecosystem with custom keybindings and automation
-                  scripts using Lua
-                </li>
-              </ul>
-              <div class="tech-stack">
-                <span class="tech-badge">Neovim</span>
-                <span class="tech-badge">Lua</span>
-                <span class="tech-badge">LSP</span>
-                <span class="tech-badge">Git</span>
-              </div>
-            </div>
-            <div class="project-footer">
-              <a
-                href="https://github.com/hkhrithik007/nvimScratch.git"
-                target="_blank"
-                class="project-link github"
-              >
-                <i class="fab fa-github"></i> View Config
-              </a>
-            </div>
-          </div>
-
-          <!-- Survey Form -->
-          <div class="project-card">
-            <div class="project-header">
-              <h3>Responsive Survey Form</h3>
-              <div class="date">August 2021</div>
-            </div>
-            <div class="project-body">
-              <ul>
-                <li>
-                  Developed responsive survey form using HTML, CSS, JavaScript
-                  with client-side validation
-                </li>
-                <li>
-                  Created lightweight, mobile-first design with field-level
-                  validation and error states
-                </li>
-                <li>
-                  Implemented vanilla JavaScript for form handling without
-                  external dependencies
-                </li>
-                <li>
-                  Built accessible form with proper ARIA labels and keyboard
-                  navigation support
-                </li>
-              </ul>
-              <div class="tech-stack">
-                <span class="tech-badge">HTML</span>
-                <span class="tech-badge">CSS</span>
-                <span class="tech-badge">JavaScript</span>
-              </div>
-            </div>
-            <div class="project-footer">
-              <a
-                href="https://github.com/hkhrithik007/survey-form.git"
-                target="_blank"
-                class="project-link github"
-              >
-                <i class="fab fa-github"></i> View Code
-              </a>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
 
-    <!-- Experience Section -->
-    <section id="experience">
-      <div class="container">
-        <h2 class="section-title">Professional Experience</h2>
-        <div class="timeline">
-          <div class="timeline-item">
-            <h3>Executive Operator</h3>
-            <div class="company">Startek</div>
-            <div class="date">February 2025 – September 2025 | Bengaluru</div>
-            <ul>
-              <li>
-                Managed "MISSION HAPPINESS PROCESS" with strong stakeholder
-                collaboration
-              </li>
-              <li>
-                Improved operational efficiency using Python and Bash scripting
-                for automation
-              </li>
-              <li>
-                Consistently exceeded performance targets through process
-                optimization
-              </li>
-            </ul>
-          </div>
-
-          <div class="timeline-item">
-            <h3>Computer Science Instructor</h3>
-            <div class="company">Swadharma Foundation</div>
-            <div class="date">July 2024 – December 2024 | Jaipur</div>
-            <ul>
-              <li>
-                Developed technical curriculum achieving 90% comprehension rate
-              </li>
-              <li>
-                Applied agile methodologies in iterative curriculum development
-              </li>
-              <li>
-                Enhanced peer learning programs with data modeling concepts
-              </li>
-            </ul>
-          </div>
-
-          <div class="timeline-item">
-            <h3>Web Developer Intern</h3>
-            <div class="company">WePanther GlobalSoft Tech.</div>
-            <div class="date">January 2023 – June 2023 | Jaipur</div>
-            <ul>
-              <li>
-                Architected full-stack website increasing user engagement by 40%
-              </li>
-              <li>
-                Implemented responsive interfaces following UI/UX best practices
-              </li>
-              <li>
-                Collaborated on debugging and unit testing using Git version
-                control
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Education & Certifications Section -->
+    <!-- Certifications Section -->
+    <!-- Certifications Section -->
     <section id="certifications">
       <div class="container">
-        <h2 class="section-title">Education & Certifications</h2>
-
-        <!-- Education -->
-        <h3
-          style="
-            text-align: center;
-            color: var(--primary-color);
-            margin-bottom: 2rem;
-            font-size: 1.5rem;
-          "
-        >
-          <i class="fas fa-graduation-cap"></i> Education
-        </h3>
-        <div class="cert-grid" style="margin-bottom: 4rem">
-          <div
-            class="cert-card"
-            style="grid-column: 1 / -1; justify-content: center"
-          >
-            <div class="cert-icon"><i class="fas fa-university"></i></div>
-            <div class="cert-info">
-              <h4>
-                Bachelor of Computer Applications (Specialized in Cybersecurity)
-              </h4>
-              <p>JECRC University • 2023</p>
-            </div>
-          </div>
-        </div>
+        <h2 class="section-title">Certifications & Training</h2>
 
         <!-- Cybersecurity Certifications -->
         <h3
@@ -1413,6 +1204,35 @@
             <div class="cert-info">
               <h4>EC-Council Certified Security Specialist (ECSS v9)</h4>
               <p>EC-Council</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Training Programs -->
+        <h3
+          style="
+            text-align: center;
+            color: var(--primary-color);
+            margin: 3rem 0 2rem;
+            font-size: 1.5rem;
+          "
+        >
+          <i class="fas fa-book-reader"></i> Professional Training
+        </h3>
+        <div class="cert-grid">
+          <div class="cert-card">
+            <div class="cert-icon"><i class="fas fa-book"></i></div>
+            <div class="cert-info">
+              <h4>Complete CEH v11 Training</h4>
+              <p>EC-Council • Volumes 1–4</p>
+            </div>
+          </div>
+
+          <div class="cert-card">
+            <div class="cert-icon"><i class="fas fa-book"></i></div>
+            <div class="cert-info">
+              <h4>Complete CND v2 Training</h4>
+              <p>EC-Council • Volumes 1–4</p>
             </div>
           </div>
         </div>
@@ -1454,9 +1274,8 @@
         <h2 class="section-title">Get In Touch</h2>
         <div class="contact-content">
           <p>
-            Ready to build intelligent AI solutions together? Let's discuss how
-            my expertise in machine learning, computer vision, and algorithmic
-            systems can bring value to your projects.
+            I'm always open to discussing new projects, creative ideas, or
+            opportunities to be part of your vision.
           </p>
 
           <div class="contact-info">
@@ -1492,7 +1311,7 @@
 
     <!-- Footer -->
     <footer>
-      <p>&copy; 2025 Hritik Sharma | AI/ML Developer. All rights reserved.</p>
+      <p>&copy; 2025 Hritik Sharma. All rights reserved.</p>
     </footer>
 
     <!-- Scroll to Top Button -->
